@@ -1,0 +1,4 @@
+1. all google chrome must be closed
+2. https://googlechromelabs.github.io/chrome-for-testing/ to get the newest/ compatible chrome driver
+3. options is to load the pass history info. 
+4. chromedriver 32 to download
