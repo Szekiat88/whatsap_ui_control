@@ -58,99 +58,51 @@ new_chat_button_xpath = '//div[@title="New chat"]'
 new_chat_button = wait.until(EC.element_to_be_clickable((By.XPATH, new_chat_button_xpath)))
 new_chat_button.click()
 
-# search_start_chat_button = wait.until(EC.presence_of_element_located((By.XPATH, "//button[@aria-label='Chat list']/div[2]/span[@data-icon='search']")))
-# # Click on the chat list button
-# search_start_chat_button.click()
-
-# search_start_chat_button.send_keys("jesss jess") 
-
-# driver.switch_to.active_element.send_keys("Hello World")
-driver.switch_to.active_element.send_keys("jesss jess")
-# Add a delay of 1 second
+driver.switch_to.active_element.send_keys("Moneysave Testing")
 time.sleep(1)
 
-# Hit Enter
 driver.switch_to.active_element.send_keys(Keys.ENTER)
 
 # Locate the message input textbox
 message_input_xpath = '//div[@title="Type a message"]'
 message_input = wait.until(EC.presence_of_element_located((By.XPATH, message_input_xpath)))
 
-#IPPORATMT
-#//button[@aria-label='Search or start new chat']/div[2]//span[@data-icon='search']
-# Perform actions on the message input textbox
-# message_input.send_keys("Your message")  # Replace "Your message" with the text you want to send
-# message_input.send_keys("C:/Users/szekiatpua/Documents/GitHub/whatsap_ui_control_y/googlechromeversion.png") 
+# Send the message
+wait=WebDriverWait(driver,10000)
+time.sleep(1)
+
+message_input.send_keys("hello sis 2")
+wait=WebDriverWait(driver,10000)
+time.sleep(5)
+
+
 source_image_path='C:/Users/szekiatpua/Documents/GitHub/whatsap_ui_control_y/googlechromeversion.png'
 temp_image_path='C:/Users/szekiatpua/Documents/GitHub/whatsap_ui_control_y/w.png'
 
 # temp_image_path = 'C:/Users/szekiatpua/Downloads'
-shutil.copyfile(source_image_path, temp_image_path)
-#important to paste the copied image
-# message_input.send_keys(Keys.CONTROL, 'v')
-
-# Find the icon element by class name
-# icon_element = driver.find_element_by_class_name("attach-menu-plus")
-# Define the XPath for the element
+# shutil.copyfile(source_image_path, temp_image_path)
+ 
 icon_xpath = "//span[@data-icon='attach-menu-plus']"
-
-# Wait for the element to be present on the page
 icon_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, icon_xpath)))
-
-# Now you can perform actions on the element
 icon_element.click()
 
-
-# Define the XPath for the file input element
 file_input_xpath = "//input[@type='file' and @accept='image/*,video/mp4,video/3gpp,video/quicktime']"
-# Wait for the file input element to be present on the page
 file_input = WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.XPATH, file_input_xpath)))
-
-# Now you can perform actions on the file input element
-# file_input.click()
 file_input.send_keys("C:/Users/szekiatpua/Documents/GitHub/whatsap_ui_control_y/googlechromeversion.png")
 
-# Define the XPath expression
-xpath_expression = "//div[@title='Type a message']//div"
 
-# Find all elements matching the XPath
-elements = driver.find_elements(By.XPATH, xpath_expression)
 
-# Iterate through the elements
-for element in elements:
-    try:
-        # Check if the element is clickable
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(element))
-    except:
-        # If the element is not clickable, continue to the next element
-        continue
-    else:
-        # If the element is clickable, perform actions on it
-        element.click()
-        # Send keys to the element
-        element.send_keys("Your message here")
-        # Break the loop since we found the clickable element
-        break
-        
-# message_input.send_keys(Keys.ENTER) 
+wait=WebDriverWait(driver,100)
 
-# Wait for the send button to be clickable
-send_button = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.XPATH, "//div[@aria-label='Send']//span[@data-icon='send']"))
-)
-
-# Click the send button
+#repeated
+send_button_xpath = "//div[@aria-label='Send']"
+send_button = wait.until(EC.element_to_be_clickable((By.XPATH, send_button_xpath)))
 send_button.click()
 
 
 wait=WebDriverWait(driver,1000)
 quit()
 
-search_start_chat_button.send_keys(Keys.ENTER)  # Hit Enter
-
-# Locate the message input textbox
-message_input_xpath = '//div[@title="Type a message"]'
-message_input = wait.until(EC.presence_of_element_located((By.XPATH, message_input_xpath)))
 
 #IPPORATMT
 #//button[@aria-label='Search or start new chat']/div[2]//span[@data-icon='search']
