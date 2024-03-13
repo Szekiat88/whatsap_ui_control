@@ -102,6 +102,7 @@ for i in range(3, 50):
                 insert_generated_testing_question_tracking(cursor=cursor,connection=conn,question=question,ori_question=result[0],template_id='1_winson')
                 print(question)
                 # Locate the message input textbox
+                # can comment for avoiding message sending 
                 message_input_xpath = '//div[@title="Type a message"]'
                 message_input = wait.until(EC.presence_of_element_located((By.XPATH, message_input_xpath)))
                 
@@ -113,6 +114,7 @@ for i in range(3, 50):
                 send_button = wait.until(EC.element_to_be_clickable((By.XPATH, send_button_xpath)))
                 send_button.click()
                 time.sleep(180)
+                #till here
 
 
 
